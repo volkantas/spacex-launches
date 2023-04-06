@@ -1,0 +1,94 @@
+.search {
+    width: 500px;
+    position: relative;
+    display: flex;
+}
+
+.form {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.searchTerm {
+    width: 100%;
+    border: 3px solid #00B4CC;
+    border-right: none;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+    font-weight: bold;
+}
+
+.searchTerm:focus{
+    color: #0c3a42;
+}
+
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px 0 0 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 20px;
+    border-right: 1px solid #c2c2c2;
+    transition: opacity .5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &[disabled] {
+        background: #c2c2c2;
+        cursor: inherit;
+    }
+    &:hover {
+        opacity: .9;
+    }
+}
+
+.forwardButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+    transition: opacity .5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &[disabled] {
+        opacity: .8;
+        cursor: inherit;
+    }
+    &:hover {
+        opacity: .9;
+    }
+}
+
+.wrap{
+    padding: 20px
+}
