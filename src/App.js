@@ -18,7 +18,7 @@ function App() {
     };
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/spacex-launches">
             <div className="App">
                 <Routes>
                     <Route exact path="/" element={
