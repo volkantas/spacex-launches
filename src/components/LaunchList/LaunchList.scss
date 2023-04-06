@@ -1,0 +1,41 @@
+.name {
+    padding-top: 8px;
+}
+
+.loading {
+    text-align: center;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem;
+    background: black;
+}
+
+.launchItem{
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #383838;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    flex-direction: column;
+    cursor: pointer;
+    transition: opacity .3s;
+    background-color: #00b4cd29;
+    &:hover {
+        opacity: .7;
+        border-color: #c2c2c2;
+    }
+}
+
+@media (max-width: 600px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+}
