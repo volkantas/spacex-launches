@@ -1,7 +1,8 @@
 ## Demo
 
-## Available Scripts
 Demo link: [https://volkantas.github.io/spacex-launches/](https://volkantas.github.io/spacex-launches/)
+
+## Available Scripts
 
 In the project directory, you can run:
 
