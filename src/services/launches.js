@@ -6,7 +6,7 @@ export const launchesApi = createApi({
     baseQuery: fetchBaseQuery({baseUrl: 'https://api.spacexdata.com/v5/launches/'}),
     endpoints: (builder) => ({
         getLaunches: builder.query({
-            query: ({ name, page }) => {
+            query: ({name, page}) => {
                 const shouldSkip = !name && page === 0;
                 return {
                     url: 'query',
@@ -29,8 +29,16 @@ export const launchesApi = createApi({
                 };
             },
         }),
+        getLaunchDetail: builder.query({
+            query: ({id}) => {
+                return {
+                    url: id,
+                    method: 'GET',
+                };
+            },
+        }),
     }),
 });
 
 // Export hooks for usage in functional components
-export const {useGetLaunchesQuery} = launchesApi;
+export const {useGetLaunchesQuery, useGetLaunchDetailQuery} = launchesApi;
