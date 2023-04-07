@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/spacex-launches/static/css/main.724f6a97.css",
-    "main.js": "/spacex-launches/static/js/main.1bcc3c47.js",
+    "main.js": "/spacex-launches/static/js/main.55b374c6.js",
     "static/js/787.bfa2fac5.chunk.js": "/spacex-launches/static/js/787.bfa2fac5.chunk.js",
     "static/media/bg.jpg": "/spacex-launches/static/media/bg.bd77730e23688287d04b.jpg",
     "index.html": "/spacex-launches/index.html",
     "main.724f6a97.css.map": "/spacex-launches/static/css/main.724f6a97.css.map",
-    "main.1bcc3c47.js.map": "/spacex-launches/static/js/main.1bcc3c47.js.map",
+    "main.55b374c6.js.map": "/spacex-launches/static/js/main.55b374c6.js.map",
     "787.bfa2fac5.chunk.js.map": "/spacex-launches/static/js/787.bfa2fac5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.724f6a97.css",
-    "static/js/main.1bcc3c47.js"
+    "static/js/main.55b374c6.js"
   ]
 }
