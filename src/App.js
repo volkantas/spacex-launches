@@ -7,7 +7,7 @@ import {HashRouter, Routes, Route} from 'react-router-dom';
 
 function App() {
     return (
-        <HashRouter basename="/">
+        <HashRouter>
             <div className="layout">
                 <Routes>
                     <Route exact path="/" element={
