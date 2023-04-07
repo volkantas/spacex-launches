@@ -13,7 +13,7 @@ export default function LaunchList({onSelectLaunch}) {
     return (
         <div className="container">
             {launches.docs.map((launch) => (
-                <a href={`/spacex-launches/launch/${launch.id}`} className='launchItem' key={launch.id}>
+                <a href={`/launch/${launch.id}`} className='launchItem' key={launch.id}>
                     <img width={80} loading="lazy" src={launch.links.patch.small} alt={launch.name}/>
                     <span className='name'>{launch.name}</span>
                 </a>

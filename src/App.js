@@ -3,11 +3,11 @@ import './App.scss';
 import SearchForm from './components/SearchForm/SearchForm';
 import LaunchList from './components/LaunchList/LaunchList';
 import LaunchDetail from './components/LaunchDetail/LaunchDetail';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {HashRouter, Routes, Route} from 'react-router-dom';
 
 function App() {
     return (
-        <BrowserRouter basename="/spacex-launches">
+        <HashRouter basename="/">
             <div className="layout">
                 <Routes>
                     <Route exact path="/" element={
@@ -25,7 +25,7 @@ function App() {
                     <a href="https://www.linkedin.com/in/volkantas/">LinkedIn: https://www.linkedin.com/in/volkantas/</a>
                 </footer>
             </div>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 

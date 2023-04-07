@@ -43,7 +43,7 @@ const LaunchDetail = () => {
             </div>
 
             <div className="flex-center">
-                <a href="/spacex-launches" type="button" className="homeButton">
+                <a href="/" type="button" className="homeButton">
                     <FaHome />
                     Go Back
                 </a>
