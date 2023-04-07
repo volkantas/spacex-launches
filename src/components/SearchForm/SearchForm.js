@@ -1,30 +1,30 @@
 import React, {useEffect, useState} from 'react';
-import {setSearchQuery, setPage} from "../../slices/launchesSlice";
+import {setSearchName, setPage} from "../../slices/launchesSlice";
 import {useDispatch, useSelector} from 'react-redux';
 import './SearchForm.scss';
 import {FaAngleLeft, FaAngleRight, FaSearch} from 'react-icons/fa';
-import {useGetLaunchesQuery} from "../../services/launches";
+import {launchesApi, useGetLaunchesQuery} from "../../services/launches";
 
 const SearchForm = () => {
     const [name, setName] = useState('');
     const dispatch = useDispatch();
-    const page = useSelector((state) => state.launches.page)
-    const { data: launches, isLoading } = useGetLaunchesQuery(page);
+    const {page, searchName} = useSelector((state) => state.launches)
+    const { data: launches, isLoading } = useGetLaunchesQuery({ name: searchName, page });
 
-    if (isLoading) {
+    if (isLoading || !launches) {
         return null;
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(setSearchQuery(name));
+        dispatch(setSearchName(name));
     };
 
     return (
         <div className="wrap">
             <form className="form" onSubmit={handleSubmit}>
                 <div className="search">
-                    <input type="text" className="searchTerm" placeholder="Which mission you are looking for?"/>
+                    <input type="text" onChange={e => setName(e.target.value)} className="searchTerm" placeholder="Which mission you are looking for?"/>
                     <button type="submit" className="searchButton">
                         <FaSearch />
                     </button>

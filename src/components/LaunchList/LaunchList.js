@@ -3,10 +3,10 @@ import './LaunchList.scss';
 import {useSelector} from "react-redux";
 
 export default function LaunchList({ onSelectLaunch }) {
-    const page = useSelector((state) => state.launches.page)
-    const { data: launches, isLoading } = useGetLaunchesQuery(page);
+    const {page, searchName} = useSelector((state) => state.launches)
+    const { data: launches, isLoading } = useGetLaunchesQuery({ name: searchName, page });
 
-    if (isLoading) {
+    if (isLoading || !launches) {
         return <div className="loading">Loading...</div>;
     }
 

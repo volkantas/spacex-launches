@@ -2,7 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
     launches: [],
-    searchQuery: '',
+    searchName: '',
     selectedLaunch: null,
     page: 0,
 }
@@ -14,11 +14,11 @@ const launchesSlice = createSlice({
         setPage: (state, action) => {
             state.page = action.payload;
         },
-        setSearchQuery: (state, action) => {
-            state.searchQuery = action.payload;
+        setSearchName: (state, action) => {
+            state.searchName = action.payload;
         },
     }
 });
 
-export const {setSearchQuery, setPage} = launchesSlice.actions;
+export const {setSearchName, setPage} = launchesSlice.actions;
 export default launchesSlice.reducer;

@@ -1,43 +1,36 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
-
 // Define a service using a base URL and expected endpoints
+
 export const launchesApi = createApi({
     reducerPath: 'launchesApi',
     baseQuery: fetchBaseQuery({baseUrl: 'https://api.spacexdata.com/v5/launches/'}),
     endpoints: (builder) => ({
-        getLaunchByName: builder.query({
-            query: (name, offset, limit) => ({
-                url: 'query',
-                method: 'POST',
-                body: {
-                    query: {
-                        name: {
-                            $regex: `^${name}$`,
-                            $options: 'i'
+        getLaunches: builder.query({
+            query: ({ name, page }) => {
+                const shouldSkip = !name && page === 0;
+                return {
+                    url: 'query',
+                    method: 'POST',
+                    body: {
+                        query: name
+                            ? {
+                                name: {
+                                    $regex: `${name}`,
+                                    $options: 'i',
+                                },
+                            }
+                            : {},
+                        options: {
+                            offset: page,
+                            limit: 100,
                         },
                     },
-                    options: {
-                        offset: offset,
-                        limit: limit,
-                    },
-                },
-            }),
-        }),
-        getLaunches: builder.query({
-            query: (offset) => ({
-                url: 'query',
-                method: 'POST',
-                body: {
-                    query: {},
-                    options: {
-                        offset: offset,
-                        limit: 100,
-                    },
-                },
-            }),
+                    skip: shouldSkip,
+                };
+            },
         }),
     }),
 });
 
 // Export hooks for usage in functional components
-export const {useGetLaunchByNameQuery, useGetLaunchesQuery} = launchesApi;
+export const {useGetLaunchesQuery} = launchesApi;
