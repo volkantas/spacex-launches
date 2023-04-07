@@ -21,7 +21,8 @@ function App() {
                 </Routes>
                 <footer>
                     © 2023 Space and Stars. This year has been a remarkable year for exciting discoveries and achievements in space and the stars.
-                    <a href="https://www.linkedin.com/in/volkantas/">https://www.linkedin.com/in/volkantas/</a>
+                    <a href="https://github.com/volkantas/spacex-launches/">Github Page: https://github.com/volkantas/spacex-launches/</a>
+                    <a href="https://www.linkedin.com/in/volkantas/">LinkedIn: https://www.linkedin.com/in/volkantas/</a>
                 </footer>
             </div>
         </BrowserRouter>
